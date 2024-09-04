@@ -1,0 +1,613 @@
+html {
+    font: 112.5% / 1.625 -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #272b33;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Header ve Navigasyon stilleri */
+header {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0.5rem 1rem; 
+    background-color: #fff; 
+    box-sizing: border-box; 
+}
+
+.logo img {
+    height: 40px;
+    width: 40px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 60px;
+    padding: 0 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li:not(:last-child) {
+    margin-right: 1.75rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff9800;
+}
+
+/* Support Us Button */
+.nav-support-btn {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 13.5px;
+    font-weight: 700;
+    line-height: 21.9375px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #ff9800;
+    padding: 9px 18px;
+    cursor: pointer;
+    border-radius: 9px;
+    transition: 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-support-btn .support-us-icon {
+    display: none; 
+}
+
+.nav-support-btn:hover {
+    background-color: #ff9800;
+    color: #ffffff;
+}
+
+/* Mobil Görünüm için Support Us Butonu */
+@media (max-width: 600px) {
+    .nav-support-btn {
+        background-color: #ff9800; 
+        color: #ffffff; 
+        border: none; /* Kenarlık kaldırıldı */
+        font-size: 0;
+        padding: 0;
+    }
+
+    .nav-support-btn .support-us-text {
+        display: none; /* Yazıyı gizle */
+    }
+
+    .nav-support-btn .support-us-icon {
+        display: inline;
+        font-size: 24px;
+        color: #ffffff; 
+    }
+}
+
+@media (min-width: 601px) {
+    .nav-support-btn {
+        background-color: #ffffff; 
+        color: #333333; 
+        border: 1px solid #ff9800; 
+    }
+
+    .nav-support-btn .support-us-icon {
+        color: #333333; 
+    }
+}
+
+/* Hero Bölümü */
+.hero {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: calc(50vh - 60px);
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    z-index: 2;
+}
+
+.hero .hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero .hero-image svg {
+    width: 100%;
+    height: 100%;
+    fill: rgb(245, 245, 245);
+}
+
+.hero h1 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 900;
+    font-size: 101px;
+    line-height: 111px;
+    color: #202329;
+    margin: 0;
+}
+
+.hero h1::selection {
+    background: #202329;
+    color: #ff9800;
+}
+
+/* Özellikler Bölümü */
+.features {
+    padding: 4rem 2rem;
+    background: #272b33;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1920px;
+}
+
+.card {
+    width: 600px;
+    height: 220px;
+    display: flex;
+    overflow: hidden;
+    background: #3c3e44;
+    border-radius: 0.5rem;
+    margin: 0.75rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -1px;
+    color: #ffffff;
+}
+
+#character-details {
+    background: #3c3e44;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.name-page .status-icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+}
+
+
+
+
+#character-details h1 {
+    font-size: 2em;
+    color:rgb(255, 255, 255);
+    margin-bottom: 10px;
+}
+
+#character-details p {
+    font-size: 1em;
+    color:rgb(255, 255, 255);
+    margin: 5px 0;
+}
+
+#character-details img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+#locations-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    padding: 50px;
+    text-align: center;
+}
+
+.location-card {
+    width: calc(50% - 20px); 
+    background-color: #3c3e44;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.location-card h2 {
+    margin-top: 0;
+}
+
+#location-details {
+    background: #3c3e44;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#episodes-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    padding: 50px;
+    text-align: center;
+}
+
+.episode-card {
+    width: calc(50% - 20px); 
+    background-color: #3c3e44;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.character-image {
+    flex: 2 1 0%;
+}
+
+.character-info {
+    padding: 0.75rem;
+    bottom: 0.75rem;
+    flex: 3 1 0%;
+    position:relative;
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.character-info a {
+    color: rgb(245, 245, 245);
+    text-decoration: none; /* Altı çizili olmamasını sağlar */
+}
+
+.character-info h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    white-space: nowrap;
+}
+
+.character-info span {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.character-info .section {
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.character-name a:hover {
+    color:#ff9800;
+}
+
+.character-location, .character-origin {
+    padding: 2%;
+    color: rgb(158, 158, 158);
+}
+
+.character-location a:hover,
+.character-origin a:hover {
+    color: #ff9800; /* Hover üzerine gelindiğinde rengi değiştirir */
+}
+
+.info-item {
+    margin-bottom: 0.5rem;
+}
+
+/* Last known location ve First seen in açıklamalarının alt satıra geçmesi */
+.character-info .section p {
+    margin: 0; 
+}
+
+.character-info .section a {
+    display: block; 
+}
+
+
+.status-icon {
+    height: 0.5rem;
+    width: 0.5rem;
+    margin-right: 0.375rem;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.status-icon.alive {
+    background-color: rgb(85, 204, 68); 
+}
+
+.status-icon.dead {
+    background-color: rgb(214, 61, 46);
+}
+
+.status-icon.unknown {
+    background-color: rgb(158, 158, 158); 
+}
+
+/* 'Back to Home' butonunu sadece 'episode.html' 'location.html' 'characters.html' sayfalarında görünür yap */
+.episode-page .back-home,
+.location-page .back-home {
+    margin-left: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #ff9800;
+    padding: 5px 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.episode-page .back-home:hover,
+.location-page .back-home:hover {
+    background-color: #333333;
+    color: #ff9800;
+}
+
+#characters-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    padding: 50px;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.character-card {
+    width: calc(50% - 20px); 
+    background-color: #3c3e44;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.character-card h2 {
+    margin-top: 0;
+}
+
+.characters-page .status-icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+}
+
+/* index.html sayfasındaki butonu gizlemek için */
+body:not(.episode-page):not(.location-page) .back-home {
+    display: none;
+}
+
+/* Footer */
+footer {
+    padding: 2rem;
+    background: #202329;
+    text-align: center;
+    color: #ffffff;
+}
+
+.footer-stats {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-flow: column;
+    position: relative;
+    background: rgb(32, 35, 41);
+    color: rgb(158, 158, 158);
+    padding: 4.5rem 0px;
+    min-height: calc(120px);
+    width: 100%;
+}
+
+.footer-stats ul {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.footer-stats ul li a {
+    color: rgb(158, 158, 158);
+    border-bottom: none;
+}
+
+.footer-stats ul li span {
+    margin: 0;
+}
+
+.footer-stats ul li + li {
+    margin-left: 1.5rem;
+}
+
+.footer-stats ul li {
+    margin: 0;
+}
+
+.footer-stats a:hover {
+    color: #ff9800;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.lpmWNO {
+    margin: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+}
+
+footer p {
+    font-size: 15px; 
+    color: #fff; 
+    text-align: center; 
+    margin: 10px 0; 
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+/* Last Known Location sayfasındaki veriler */
+
+.location-page #location-details {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px); 
+    padding: 2rem;
+}
+
+.location-page #location-details > div {
+    background-color: #3c3e44;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -1px;
+    text-align: center;
+    max-width: 600px; 
+    width: 100%;
+    margin-bottom: 1rem; 
+}
+
+.location-page #location-details h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.episode-page #episode-details {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px); /* Sayfanın tamamını kaplayacak şekilde ayarlama */
+    padding: 2rem;
+}
+
+.episode-page #episode-details > div {
+    background-color: #3c3e44;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -1px;
+    text-align: center;
+    max-width: 600px; 
+    width: 100%;
+    margin-bottom: 1rem; 
+}
+
+.episode-page #episode-details h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.episode-page #episode-details p {
+    margin: 1rem 0;
+    font-size: 1rem;
+}
+
+#episode-details {
+    background: #3c3e44;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+/* Mobil Görünüm */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .logo {
+        margin-bottom: 0.5rem; 
+    }
+
+    nav ul {
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        padding: 0;
+        margin: 0;
+        list-style: none; 
+    }
+
+    nav ul li {
+        margin-bottom: 0.5rem; 
+    }
+
+    .nav-support-btn {
+        display: flex; 
+        align-items: center; 
+    }
+
+    .nav-support-btn span {
+        margin-right: 0.5rem; 
+    }
+}
